@@ -1,4 +1,6 @@
-import 'package:local_event_finder/domain/event.dart';
+
+
+import '../domain/event.dart';
 
 class DummyData {
   final List<Event> dummyEvents = [

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:local_event_finder/data/service/event_service.dart';
-import 'package:local_event_finder/presentation/providers/event_provider.dart';
-import 'package:local_event_finder/presentation/screens/splash/splash_screen.dart';
 import 'package:provider/provider.dart';
+
+import 'data/service/event_service.dart';
+import 'presentation/providers/event_provider.dart';
+import 'presentation/screens/splash/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());

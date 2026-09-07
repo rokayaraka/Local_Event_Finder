@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:local_event_finder/presentation/screens/event/widgets/event_map_widget.dart';
-
 import 'package:provider/provider.dart';
 
 import '../../../core/category_color.dart';
 import '../../providers/event_provider.dart';
+import 'widgets/event_map_widget.dart';
 
 class EventScreen extends StatefulWidget {
   const EventScreen({super.key, this.eventId});

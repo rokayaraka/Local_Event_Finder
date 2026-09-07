@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:local_event_finder/data/service/event_service.dart';
-import 'package:local_event_finder/domain/event.dart';
+
+import '../../data/service/event_service.dart';
+import '../../domain/event.dart';
+
 
 class EventProvider extends ChangeNotifier {
   EventProvider(this._eventService);
@@ -30,7 +32,7 @@ class EventProvider extends ChangeNotifier {
     }
   }
 
-  
+
 
   Event getEventById(String id) {
     return _events.firstWhere((event) => event.id == id);
