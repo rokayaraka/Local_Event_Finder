@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:local_event_finder/presentation/screens/home/home_screen.dart';
+
+import '../home/home_screen.dart';
+
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -13,6 +15,7 @@ class _SplashScreenState extends State<SplashScreen>
   late AnimationController _animController;
   late Animation<double> _FadeIn;
 
+  @override
   initState() {
     super.initState();
     _animController = AnimationController(
@@ -32,7 +35,6 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     _animController.dispose();
   }

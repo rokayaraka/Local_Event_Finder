@@ -19,49 +19,53 @@ class EventCard extends StatelessWidget {
         child: Container(
           margin: EdgeInsets.symmetric(vertical: 8.0),
           child: Card(
-            elevation: 3,
-            child: Column(
-              crossAxisAlignment: .start,
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.vertical(
-                    top: .circular(12)
+            color: Colors.white,
+            elevation: 4,
+            child: InkWell(
+              onTap: onTap,
+              child: Column(
+                crossAxisAlignment: .start,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.vertical(
+                      top: .circular(12)
+                    ),
+                    child: Image.network(event.imageUrl,
+                    height: 150,
+                    width: .infinity,
+                    fit: .cover,
+                    ),
                   ),
-                  child: Image.network(event.imageUrl,
-                  height: 150,
-                  width: .infinity,
-                  fit: .cover,
+                  Container(
+                    padding: .symmetric(horizontal: 12,vertical: 4),
+                    decoration: BoxDecoration(
+                      color: getCategoryColor(event.category),
+                      borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(12)
+                      )
+                    ),
+                    child: Text(event.category,
+                    style: TextStyle(color: Colors.white),
+                    ),
                   ),
-                ),
-                Container(
-                  padding: .symmetric(horizontal: 12,vertical: 4),
-                  decoration: BoxDecoration(
-                    color: getCategoryColor(event.category),
-                    borderRadius: BorderRadius.only(
-                      bottomRight: Radius.circular(12)
-                    )
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      crossAxisAlignment: .start,
+                      children: [
+                        Text(event.title,
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: .bold,
+                        ),
+                        ),
+                        Text("Date: ${event.date}",),
+                        Text("Location: ${event.location}",)
+                      ],
+                    ),
                   ),
-                  child: Text(event.category,
-                  style: TextStyle(color: Colors.white),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    crossAxisAlignment: .start,
-                    children: [
-                      Text(event.title,
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: .bold,
-                      ),
-                      ),
-                      Text("Date: ${event.date}",),
-                      Text("Location: ${event.location}",)
-                    ],
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
