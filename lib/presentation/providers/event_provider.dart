@@ -30,6 +30,8 @@ class EventProvider extends ChangeNotifier {
     }
   }
 
+  
+
   Event getEventById(String id) {
     return _events.firstWhere((event) => event.id == id);
   }
